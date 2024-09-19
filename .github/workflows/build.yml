@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      - master
+      - "*"
     tags:
       - "*"
   pull_request:
@@ -17,8 +17,9 @@ jobs:
       fail-fast: false
       matrix:
         id:
-          - "mysql-8.0"
-          - "mysql-5.7"
+          - "mysql-8.0-minimal"
+#          - "mysql-8.0"
+#          - "mysql-5.7"
     steps:
       - name: Parse ID
         id: parse
